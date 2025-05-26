@@ -1,0 +1,17 @@
+
+CertNode Trust Constitution (v1.0)
+
+1. Purpose
+CertNode exists to guarantee structural, sovereign, and independently verifiable certification of nonfiction outputs across distributed publishing environments.
+
+2. Authority
+The issuing authority for CertNode Core is the runtime operator. All vault nodes must declare issuer identity and conform to the licensing schema.
+
+3. Federation
+Nodes may federate under license and must comply with trust consistency and sync integrity requirements.
+
+4. Enforcement
+Violations of licensing or protocol rules may result in vault revocation, delisting, or trust invalidation.
+
+5. Permanence
+All certified outputs must retain verifiability independent of runtime availability through offline capsule export and ledger inclusion.
