@@ -1,0 +1,20 @@
+
+CertNode Sovereign Trust System – Signature Manifest
+
+System Version: v3.2
+Finalized: Yes
+Trusted Vault Entries: 3
+ICS Registry Hash: SHA256(f0b1d3...truncated)
+Trust Capsule ID: certnode-trust-v3.2
+Public Manifest Anchor: certnode.io/vault
+
+Includes:
+- Public HTML site scaffold (/docs)
+- ICS Fingerprint Auto-Indexer (Python)
+- Certified Publishing Shell (HTML, PDF)
+- External Validator API Stub (verify.html?ics=...)
+- Partner Onboarding Materials (/partners)
+- Trust Metadata + Embed Schema
+- Signature Capsule with Manifest
+
+This package constitutes the complete, deployable, and externally auditable CertNode nonfiction certification infrastructure.
