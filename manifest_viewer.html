@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>CertNode Signature Manifest Viewer</title></head>
+<body>
+<h1>Signature Manifest</h1>
+<input type="text" id="search" placeholder="Search ICS or title">
+<table border="1" id="manifest"></table>
+<script>
+async function loadManifest() {
+  const res = await fetch("vault.json"); const data = await res.json();
+  const table = document.getElementById("manifest");
+  table.innerHTML = "<tr><th>Title</th><th>ICS</th><th>Date</th><th>Link</th></tr>";
+  data.forEach(entry => {
+    const row = table.insertRow();
+    row.innerHTML = `<td>${entry.title}</td><td>${entry.ics}</td><td>${entry.date}</td><td>${entry.link ? `<a href='${entry.link}'>View</a>` : '–'}</td>`;
+  });
+  document.getElementById("search").addEventListener("input", function() {
+    const val = this.value.toLowerCase();
+    [...table.rows].slice(1).forEach(r => {
+      r.style.display = [...r.cells].some(c => c.textContent.toLowerCase().includes(val)) ? "" : "none";
+    });
+  });
+}
+loadManifest();
+</script>
+</body>
+</html>

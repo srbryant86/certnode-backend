@@ -1,0 +1,26 @@
+name: CertNode Auto-Certify
+
+on:
+  push:
+    paths:
+      - '**.pdf'
+      - '**.md'
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Auto Certify Docs
+      run: |
+        pip install hashlib
+        for file in $(git diff --name-only HEAD^ HEAD | grep -E '\.pdf$|\.md$'); do
+          python certnode_certify.py $file
+        done
+    - name: Commit Vault Update
+      run: |
+        git config user.name "CertNode Bot"
+        git config user.email "certnode@auto"
+        git add vault.json ics_registry.json
+        git commit -m "Auto-certify: update vault and registry"
+        git push

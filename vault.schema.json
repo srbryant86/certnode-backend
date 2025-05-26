@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "title",
+      "ics",
+      "date"
+    ],
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "ics": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "link": {
+        "type": "string"
+      }
+    }
+  }
+}
