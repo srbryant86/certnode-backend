@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head><title>Acme Vault Portal</title></head>
+<body>
+<h1>Acme Organization – Certified Documents</h1>
+<ul id="vaultList"></ul>
+<script>
+fetch("vaults/acme.json")
+  .then(r => r.json())
+  .then(d => {
+    const list = document.getElementById("vaultList");
+    d.forEach(entry => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${entry.title}</strong> – ${entry.ics} (${entry.date})`;
+      list.appendChild(li);
+    });
+  });
+</script>
+</body></html>
