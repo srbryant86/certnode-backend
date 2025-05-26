@@ -1,7 +1,1 @@
-body { font-family: system-ui, sans-serif; margin: 0; padding: 2rem; background: #f9f9f9; color: #111; line-height: 1.6; }
-header { margin-bottom: 2rem; }
-h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
-nav a { display: inline-block; margin-right: 1rem; color: #0057e7; text-decoration: none; }
-nav a:hover { text-decoration: underline; }
-section { margin-top: 2rem; max-width: 700px; }
-footer { margin-top: 3rem; font-size: 0.875rem; color: #555; }
+body { font-family: sans-serif; margin: 2rem; line-height: 1.6; color: #111; background: #f9f9f9; }

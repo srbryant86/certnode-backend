@@ -1,0 +1,7 @@
+
+certnode:
+  version: "v3.1+"
+  verified_by: "certnode.io"
+  registry: "https://www.certnode.io/ics_registry.json"
+  signature: "ICS-2025-MANIFESTO"
+  embedded: true

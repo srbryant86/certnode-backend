@@ -1,0 +1,8 @@
+
+CertNode Trust Capsule v3.1+
+Includes:
+- Verified publishing templates (HTML, MD)
+- ICS trust metadata (JSON, YAML)
+- External validator SDK (JS, Python)
+- Runtime badge loader (v3.1+)
+- Signature manifest + verified links

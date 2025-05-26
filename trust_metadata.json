@@ -1,0 +1,8 @@
+{
+  "certnode_version": "v3.1+",
+  "verified_by": "certnode.io",
+  "fingerprint_format": "short-ics-hash",
+  "trusted_registry": "https://www.certnode.io/ics_registry.json",
+  "embedded": true,
+  "sdk_version": "v1.0"
+}
