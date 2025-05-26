@@ -1,1 +1,52 @@
-<html><head><title>Trust Badge Generator</title></head><body><h1>Generate Badge</h1><input id='ics'><button onclick='gen()'>Generate</button><pre id='out'></pre><script>function gen(){const ics=document.getElementById('ics').value;document.getElementById('out').textContent=`![CertNode Seal](seal.png)\nCertified | ${ics}\n[Verify](https://certnode.io/verify.html?ics=${ics})`}</script></body></html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Trust Badge Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 2em; max-width: 600px; margin: auto; }
+    input, button { padding: 0.5em; margin: 0.5em 0; width: 100%; font-size: 1em; }
+    pre { background: #f4f4f4; padding: 1em; overflow-x: auto; }
+    #qrcode { margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h1>CertNode Trust Badge Generator</h1>
+  <label for="ics">Enter ICS Identifier</label>
+  <input id="ics" placeholder="e.g. ICS-2025-0001" />
+  <button onclick="generate()">Generate Badge</button>
+  <pre id="output"></pre>
+  <div id="qrcode"></div>
+
+<script>
+function generate() {
+  const ics = document.getElementById("ics").value.trim();
+  if (!/^ICS-[0-9]{4}-[0-9]{4}$/.test(ics)) {
+    alert("Invalid ICS format. Use format: ICS-YYYY-NNNN");
+    return;
+  }
+  document.getElementById("output").textContent =
+`![CertNode Seal](seal.png)
+
+Certified Output | ${ics}
+
+[Verify This Certification](https://certnode.io/verify.html?ics=${ics})`;
+
+  document.getElementById("qrcode").innerHTML = "";
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://certnode.io/verify.html?ics=" + ics,
+    width: 128,
+    height: 128
+  });
+}
+</script>
+
+<footer style='margin-top:4em; font-size:0.9em; color:#666;'>
+  Certified by CertNode &nbsp;|&nbsp; &copy; 2025 CertNode Trust System &nbsp;|&nbsp;
+  <a href="https://certnode.io/capsule.html">Download Trust Capsule</a>
+</footer>
+
+</body>
+</html>

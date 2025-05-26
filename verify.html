@@ -1,43 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verify – CertNode</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    async function verifyICS(event) {
-      event.preventDefault();
-      const input = document.getElementById('ics').value.trim();
-      const trusted = ["ICS-2025-0001", "ICS-2025-0002", "ICS-2025-MANIFESTO"];
-      if (trusted.includes(input)) {
-        alert("Verified: This ICS hash is certified.");
-      } else {
-        alert("Not Verified: No match found.");
-      }
-    }
-  </script>
-</head>
+<head><meta charset="UTF-8" /><title>Verify Certification | CertNode</title></head>
 <body>
-  <header>
-    <h1>Verify a Certified Document</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="certify.html">Certify</a>
-      <a href="manifesto.html">Manifesto</a>
-      <a href="vault.html">Vault</a>
-    </nav>
-  </header>
-  <section>
-    <form onsubmit="verifyICS(event)">
-      <label for="ics">ICS Hash:</label><br>
-      <input type="text" id="ics" name="ics" placeholder="Enter ICS or Vault ID" style="width: 100%; padding: 0.5rem;" /><br><br>
-      <input type="submit" value="Verify" />
-    </form>
-  </section>
-  <footer>
-    <div style="margin-top:2rem;"><img src="certnode_seal_v1.1.png" alt="CertNode Seal" width="120"></div>
-    <p>© 2025 CertNode. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+<h1>Verify a Certified Output</h1>
+<form onsubmit="verifyICS(event)">
+  <label for="ics">Enter ICS ID:</label><br>
+  <input type="text" id="ics" placeholder="ICS-2025-0001" required />
+  <button type="submit">Verify</button>
+</form>
+<script>
+function verifyICS(e) {
+  e.preventDefault();
+  const ics = document.getElementById('ics').value.trim();
+  window.location.href = `https://certnode.io/verify.html?ics=${ics}`;
+}
+</script>
+</body></html>
