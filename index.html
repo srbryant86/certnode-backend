@@ -3,42 +3,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CertNode | Public Trust System</title>
+  <title>CertNode Trust System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CertNode is a sovereign nonfiction trust system for verifiable output certification.">
-  <meta name="author" content="CertNode Trust System" />
-  <meta property="og:title" content="CertNode – Sovereign Trust Infrastructure" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="seal.png" />
-  <meta property="og:description" content="CertNode verifies nonfiction integrity through cryptographic certification and public vaults." />
-  <link rel="icon" href="seal.png" />
+  <link rel="icon" type="image/png" href="assets/seal.png">
+  <meta name="theme-color" content="#0a0a0a">
   <style>
-    body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; }
-    header { display: flex; align-items: center; }
-    header img { width: 40px; height: 40px; margin-right: 10px; }
-    nav a { margin-right: 1em; }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0; padding: 2rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0a0a0a; color: #f2f2f2; line-height: 1.6;
+    }
+    header {
+      display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid #333; padding-bottom: 1rem;
+    }
+    header img {
+      width: 32px; height: 32px;
+    }
+    nav {
+      margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    nav a {
+      color: #4ea1f3; text-decoration: none; padding: 0.3rem 0.6rem;
+    }
+    nav a:hover {
+      background-color: #222; border-radius: 4px;
+    }
+    footer {
+      margin-top: 3rem; font-size: 0.9em; color: #888; border-top: 1px solid #333; padding-top: 1rem;
+    }
+    .skip-link {
+      position: absolute; left: -1000px;
+    }
+    .skip-link:focus {
+      left: 1rem; background: #222; color: #fff; padding: 0.5rem;
+    }
+    .cta {
+      margin-top: 2rem; display: inline-block; background: #4ea1f3; color: #000; padding: 0.6rem 1rem;
+      border-radius: 4px; text-decoration: none;
+    }
   </style>
 </head>
 <body>
-<header>
-  <img src="seal.png" alt="CertNode Seal">
+<a class="skip-link" href="#main">Skip to content</a>
+<header role="banner">
+  <img src="assets/seal.png" alt="CertNode Seal" />
   <h1>CertNode Trust System</h1>
 </header>
-<p>Welcome to the public trust anchor of CertNode.</p>
-<nav>
-  <a href="vault.html">Vault</a>
-  <a href="ics_registry.html">ICS Registry</a>
-  <a href="ledger.html">Ledger</a>
-  <a href="constitution.html">Governance</a>
-  <a href="signature.html">Signature</a>
-  <a href="badge.html">Badge Generator</a>
-  <a href="capsule.html">Capsule</a>
-</nav>
-
-<footer style='margin-top:4em; font-size:0.9em; color:#666;'>
-  Certified by CertNode &nbsp;|&nbsp; &copy; 2025 CertNode Trust System &nbsp;|&nbsp;
-  <a href="https://certnode.io/capsule.html">Download Trust Capsule</a>
+<main id="main" role="main">
+  <p>Welcome to the public trust anchor of CertNode. This interface allows you to verify nonfiction outputs, explore certified records, and access the official trust capsule.</p>
+  <nav role="navigation">
+    <a href="vault.html">Vault</a>
+    <a href="ics_registry.html">ICS Registry</a>
+    <a href="ledger.html">Ledger</a>
+    <a href="constitution.html">Governance</a>
+    <a href="signature.html">Signature</a>
+    <a href="badge.html">Badge Generator</a>
+    <a href="verify.html">Verify Output</a>
+    <a href="capsule.html">Capsule</a>
+    <a href="partners.html">Federation</a>
+    <a href="timeline.html">Timeline</a>
+  </nav>
+  <a href="CertNode_Public_Final_Site.zip" class="cta">Download Trust Capsule</a>
+</main>
+<footer role="contentinfo">
+  Certified by CertNode | © 2025 CertNode Trust System | 
+  <a href="signature_manifest.json">Trust Manifest</a> |
+  <a href="https://github.com/srbryant/certnode-backend">GitHub Repo</a> |
+  <a href="mailto:trust@certnode.io">Contact</a>
 </footer>
-
 </body>
 </html>
