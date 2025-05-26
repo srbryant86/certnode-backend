@@ -1,1 +1,9 @@
-{"entries":[{"ics":"ICS-2025-0001","title":"Doc 1","date":"2025-05-30"}]}
+{
+  "entries": [
+    {
+      "ics": "ICS-2025-0001",
+      "title": "Certified Output 1",
+      "date": "2025-05-30"
+    }
+  ]
+}

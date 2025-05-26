@@ -1,0 +1,1 @@
+<html><head><title>ICS Registry</title></head><body><h1>ICS Entries</h1><script>fetch('ics_registry.json').then(r=>r.json()).then(d=>document.body.innerHTML+=d.entries.map(e=>`<p>${e.ics} – ${e.title}</p>`).join(''))</script></body></html>
