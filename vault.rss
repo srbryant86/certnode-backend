@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<rss version="2.0"><channel>
+  <title>CertNode Vault Feed</title>
+  <link>https://certnode.io/vault.json</link>
+  <description>New certified outputs</description>
+  <item><title>Certified Document 1</title><link>doc1.pdf</link><guid>ICS-2025-0001</guid></item>
+</channel></rss>

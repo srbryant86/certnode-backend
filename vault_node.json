@@ -1,0 +1,5 @@
+{
+  "node_id": "certnode-federated-001",
+  "parent_vault": "https://certnode.io/vault.json",
+  "sync_uri": "https://example.org/vault.json"
+}

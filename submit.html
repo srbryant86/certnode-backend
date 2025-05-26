@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><title>Submit for Certification</title></head>
+<body>
+<h1>CertNode Certification Intake</h1>
+<form onsubmit="handleSubmit(event)">
+  <label>Document Title: <input type="text" id="title" /></label><br>
+  <label>File URL: <input type="url" id="fileurl" /></label><br>
+  <button type="submit">Submit</button>
+</form>
+<p id="response"></p>
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const entry = { title: document.getElementById("title").value, url: document.getElementById("fileurl").value, status: "pending" };
+  let queue = JSON.parse(localStorage.getItem("certQueue") || "[]");
+  queue.push(entry);
+  localStorage.setItem("certQueue", JSON.stringify(queue));
+  document.getElementById("response").innerText = "Submission received.";
+}
+</script>
+</body></html>

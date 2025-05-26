@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><title>Review Submissions</title></head>
+<body>
+<h1>Review Panel</h1>
+<ul id="queue"></ul>
+<script>
+const queue = JSON.parse(localStorage.getItem("certQueue") || "[]");
+const list = document.getElementById("queue");
+queue.forEach((entry, i) => {
+  const item = document.createElement("li");
+  item.textContent = `${entry.title} – ${entry.url} [${entry.status}]`;
+  list.appendChild(item);
+});
+</script>
+</body></html>
