@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verify – CertNode</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script>
+    async function verifyICS(event) {
+      event.preventDefault();
+      const input = document.getElementById('ics').value.trim();
+      const trusted = ["ICS-2025-0001", "ICS-2025-0002", "ICS-2025-MANIFESTO"];
+      if (trusted.includes(input)) {
+        alert("Verified: This ICS hash is certified.");
+      } else {
+        alert("Not Verified: No match found.");
+      }
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -17,7 +29,7 @@
     </nav>
   </header>
   <section>
-    <form onsubmit="alert('Validator coming soon.'); return false;">
+    <form onsubmit="verifyICS(event)">
       <label for="ics">ICS Hash:</label><br>
       <input type="text" id="ics" name="ics" placeholder="Enter ICS or Vault ID" style="width: 100%; padding: 0.5rem;" /><br><br>
       <input type="submit" value="Verify" />
