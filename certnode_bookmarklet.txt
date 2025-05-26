@@ -1,0 +1,10 @@
+javascript:(function(){
+  var ics=prompt('Enter ICS hash to verify:');
+  if(!ics)return;
+  fetch('https://www.certnode.io/ics_registry.json')
+    .then(r=>r.json())
+    .then(d=>{
+      const found=d.entries.find(e=>e.ics===ics.toUpperCase());
+      alert(found ? '✅ Verified: '+found.title : '❌ Not Verified');
+    });
+})();

@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Certified Output Example",
+  "identifier": "ICS-2025-XXXX",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CertNode"
+  },
+  "url": "https://www.certnode.io/verify.html?ics=ICS-2025-XXXX"
+}
