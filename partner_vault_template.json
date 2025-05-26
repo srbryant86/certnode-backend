@@ -1,0 +1,6 @@
+{
+  "partner": "example.org",
+  "vault": [],
+  "registry": [],
+  "embed": "https://www.certnode.io/verify.html?ics="
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>CertNode Validator</title></head>
+<body>
+<h1>Verify ICS Hash</h1>
+<form onsubmit="validateICS(); return false;">
+  <input type="text" id="icsInput" placeholder="Enter ICS hash">
+  <button type="submit">Validate</button>
+</form>
+<p id="result"></p>
+<script>
+  async function validateICS() {
+    const ics = document.getElementById("icsInput").value.trim().toUpperCase();
+    const res = await fetch("ics_registry.json");
+    const data = await res.json();
+    const match = data.entries.find(e => e.ics === ics);
+    document.getElementById("result").innerText = match
+      ? "✅ Verified: " + match.title
+      : "❌ Not Verified";
+  }
+</script>
+</body>
+</html>

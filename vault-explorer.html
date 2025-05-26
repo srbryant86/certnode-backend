@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Vault Explorer</title></head>
+<body>
+<h1>CertNode Vault Explorer</h1>
+<input type="text" id="filter" placeholder="Search...">
+<table border="1" id="vaultTable"></table>
+<script>
+async function loadVault() {
+  const res = await fetch("vault.json");
+  const data = await res.json();
+  const table = document.getElementById("vaultTable");
+  table.innerHTML = "<tr><th>Title</th><th>ICS</th><th>Date</th><th>Link</th></tr>";
+  data.forEach(entry => {
+    const row = table.insertRow();
+    row.innerHTML = `<td>${entry.title}</td><td>${entry.ics}</td><td>${entry.date}</td><td>${entry.link ? `<a href='${entry.link}'>View</a>` : '–'}</td>`;
+  });
+  document.getElementById("filter").addEventListener("input", function() {
+    const text = this.value.toLowerCase();
+    [...table.rows].slice(1).forEach(row => {
+      row.style.display = [...row.cells].some(cell => cell.textContent.toLowerCase().includes(text)) ? "" : "none";
+    });
+  });
+}
+loadVault();
+</script>
+</body>
+</html>
