@@ -1,7 +1,28 @@
-<html><head><title>Vault Explorer</title></head><body><h1>Certified Outputs</h1><script>fetch('vault.json').then(r=>r.json()).then(d=>document.body.innerHTML+=d.map(e=>`<p>${e.title} – ${e.ics}</p>`).join(''))</script>
-<footer style='margin-top:4em; font-size:0.9em; color:#666;'>
-  Certified by CertNode &nbsp;|&nbsp; &copy; 2025 CertNode Trust System &nbsp;|&nbsp;
-  <a href="https://certnode.io/capsule.html">Download Trust Capsule</a>
-</footer>
 
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Vault Integrity – CertNode</title>
+<style>
+  body { font-family: sans-serif; padding: 2rem; background: #fafafa; color: #333; }
+  h1 { color: #00695c; }
+  section { margin-bottom: 2rem; }
+</style>
+</head>
+<body>
+  <h1>CertNode Vault Integrity</h1>
+  <section>
+    <h2>Structural Archives</h2>
+    <p>All certified works are stored with convergence validation, ICS fingerprinting, and trust metadata. Each entry is protected against drift and mutation.</p>
+  </section>
+  <section>
+    <h2>Immutable Output Registry</h2>
+    <p>The registry enforces long-term logic integrity and audit readiness. Outputs are anchored using:</p>
+    <ul>
+      <li>ICS (Immutable Certification Signature)</li>
+      <li>STA (Source Trace Anchor)</li>
+      <li>SDS (Structural Drift Sentinel)</li>
+      <li>LSTR (Logic Sovereignty Trace Registry)</li>
+    </ul>
+  </section>
+</body>
+</html>
